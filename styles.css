@@ -10,6 +10,7 @@
 body {
     color: #ededed;
     font-size: 16px;
+    background-color: #000000;
 }
 
 .header {
@@ -22,8 +23,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
-    flex-wrap: wrap;
+    z-index: 1000;
 }
 
 .logo {
@@ -34,9 +34,21 @@ body {
     font-weight: 600;
 }
 
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #ededed;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
 .navbar {
     display: flex;
-    flex-wrap: wrap;
 }
 
 .navbar a {
@@ -44,8 +56,7 @@ body {
     color: #ededed;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 20px;
-    margin-top: 10px;
+    margin-left: 35px;
     transition: .3s;
 }
 
@@ -56,49 +67,39 @@ body {
 
 .home {
     min-height: 100vh;
-    background: black;
-    background-size: cover;
-    background-position: center;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 100px 5% 40px;
+    padding: 0 5%;
     position: relative;
 }
 
 .home-content {
     max-width: 600px;
-    width: 100%;
-    text-align: center;
     z-index: 1;
 }
 
 .home-content h1 {
-    position: relative;
-    font-size: 2.5rem;
+    font-size: 56px;
     font-weight: 700;
     line-height: 1.2;
 }
 
 .home-content h3 {
-    position: relative;
-    font-size: 1.5rem;
+    font-size: 32px;
     font-weight: 700;
     color: orange;
 }
 
 .home-content p {
-    position: relative;
-    font-size: 1rem;
+    font-size: 16px;
     margin: 20px 0 40px;
 }
 
 .home-content .btn-box {
-    position: relative;
-    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    width: 345px;
     height: 50px;
-    margin: 0 auto;
 }
 
 .btn-box a {
@@ -106,12 +107,12 @@ body {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 150px;
     height: 100%;
     background: orange;
     border: 2px solid orange;
     border-radius: 8px;
-    font-size: 1.2rem;
+    font-size: 19px;
     color: #000000;
     text-decoration: none;
     font-weight: 600;
@@ -144,9 +145,7 @@ body {
 .home-sci {
     position: absolute;
     bottom: 40px;
-    left: 0;
-    width: 100%;
-    padding: 0 5%;
+    width: 170px;
     display: flex;
     justify-content: space-between;
 }
@@ -193,7 +192,7 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    width: 100%;
+    width: 45%;
     height: 100%;
     background: transparent;
     transition: 3s;
@@ -201,130 +200,130 @@ body {
 
 .home-imgHover:hover {
     background: #000000;
-    opacity: .9;
+    opacity: .8;
 }
 
-.skills, .education, .experience, .contact, .certifications, .about {
+.about, .education, .experience, .certifications, .contact {
     min-height: 100vh;
-    opacity: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     padding: 100px 5% 40px;
-    background-color: #000000; 
     text-align: center;
-    transition: opacity 1s ease-in-out; 
 }
 
-.skills h2, .education h2, .experience h2, .contact h2, .certifications h2, .about h2 {
-    margin-top: 50px;
-    font-size: 2.5rem;
-    color: orange; 
+.about h2, .education h2, .experience h2, .certifications h2, .contact h2 {
+    font-size: 45px;
+    margin-bottom: 30px;
+    color: orange;
 }
 
-.skills ul, .education ul, .experience ul {
-    font-size: 1.2rem;
-    padding-left: 20px;
+.about p, .education ul, .experience ul {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.skills ul li, .education ul li, .experience ul li {
-    margin-top: 20px;
-    margin-bottom: 20px; 
-}
-
-.contact ul {
-    font-size: 2rem;
+.education ul, .experience ul {
     list-style-type: none;
     padding: 0;
 }
 
-.contact ul li {
-    margin-top: 30px;
-    margin-bottom: 30px; 
-}
-
-.certification-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px; 
-    list-style: none;
-    padding: 0;
-}
-
-.certification-grid li {
-    font-size: 1rem;
-    color: #ededed;
-}
-
-.about p {
-    margin-top: 30px;
+.education li, .experience li {
     margin-bottom: 20px;
-    font-size: 1.1rem;
+}
+
+.contact ul {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.contact ul a {
+    margin: 0 15px;
+    font-size: 30px;
+    color: orange;
+    transition: .3s;
+}
+
+.contact ul a:hover {
+    color: #ededed;
 }
 
 .footer {
-    background-color: #000000;
+    background-color: #1f1f1f;
     color: #ededed;
     text-align: center;
-    padding: 20px 5%;
+    padding: 20px 0;
 }
 
 @media screen and (max-width: 768px) {
     .header {
-        padding: 10px 5%;
+        padding: 15px 5%;
+    }
+
+    .hamburger-menu {
+        display: block;
     }
 
     .navbar {
-        margin-top: 10px;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: orange;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 80px;
+        transition: 0.5s;
+    }
+
+    .navbar.active {
+        right: 0;
     }
 
     .navbar a {
-        margin-left: 10px;
-        font-size: 16px;
+        margin: 15px 0;
+        font-size: 20px;
+    }
+
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
     }
 
     .home-content h1 {
-        font-size: 2rem;
+        font-size: 36px;
     }
 
     .home-content h3 {
-        font-size: 1.2rem;
+        font-size: 24px;
     }
 
-    .home-content p {
-        font-size: 0.9rem;
-    }
-
-    .btn-box a {
-        font-size: 1rem;
+    .btn-box {
+        width: 100%;
+        justify-content: center;
     }
 
     .home-sci {
-        flex-direction: column;
-        align-items: flex-end;
-        bottom: 20px;
+        width: 160px;
     }
 
-    .home-sci a {
-        margin-bottom: 10px;
+    .about h2, .education h2, .experience h2, .certifications h2, .contact h2 {
+        font-size: 36px;
     }
 
-    .skills h2, .education h2, .experience h2, .contact h2, .certifications h2, .about h2 {
-        font-size: 2rem;
-    }
-
-    .skills ul, .education ul, .experience ul {
-        font-size: 1rem;
-    }
-
-    .contact ul {
-        font-size: 1.5rem;
-    }
-
-    .about p {
-        font-size: 1rem;
-    }
-}
-
-@keyframes showRight {
-    100% {
-        width: 0;
+    .about p, .education ul, .experience ul {
+        font-size: 16px;
     }
 }
